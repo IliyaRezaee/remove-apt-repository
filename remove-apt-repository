@@ -1,0 +1,23 @@
+#! /usr/bin/python3
+
+from InquirerPy import prompt
+import os, sys
+
+sources = "/etc/apt/sources.list.d"
+
+repo = prompt(
+    {
+        "name": "repo",
+        "type": "fuzzy",
+        "message": "Select a source",
+        "choices": os.listdir(sources),
+    }
+)["repo"]
+
+if not repo:
+    print("Your choice is not valid")
+    sys.exit()
+
+file = os.path.join(sources, repo)
+os.remove(file)
+os.system("apt update")
