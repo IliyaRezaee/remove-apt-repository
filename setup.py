@@ -6,7 +6,7 @@ with open("README.md", "r") as file:
 
 setuptools.setup(
      name='remove-apt-repository',
-     version='0.1',
+     version='1.0',
      scripts=['remove-apt-repository'] ,
      author="Iliya Rezaee",
      author_email="iliyarezaee2017@gmail.com",
